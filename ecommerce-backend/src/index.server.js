@@ -3,6 +3,7 @@ const env = require('dotenv');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 //Routes
 const authRoutes = require('./routes/auth');
@@ -27,6 +28,8 @@ mongoose.connect(
   console.log('Database connected');
 }).catch( (err) => console.error(err));
 
+
+app.use(cors()); // to allow request
 app.use(express.json());
 app.use( '/public' ,express.static(path.join(__dirname, 'uploads'))); //Display image in the browser
 
