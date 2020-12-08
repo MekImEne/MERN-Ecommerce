@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import {NavLink, Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
@@ -31,7 +31,6 @@ const Header = (props) => {
     const renderNonLoggedInLinks = () => {
         return (
             <Nav>
-                {/* <Nav.Link href="/signin">Signin</Nav.Link> */}
                 <li className="nav-item">
                     <NavLink to="/signin" className="nav-link">Signin</NavLink>
                 </li>
