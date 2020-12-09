@@ -43,9 +43,9 @@ const Category = (props) => {
     return myCategories;
   };
 
-  const handleClose = () => {
+  const handleSave = () => {
 
-    const form = new FormData();
+  const form = new FormData();
     // const cat = {
     //   categoryName,
     //   parentCategoryId,
@@ -60,7 +60,10 @@ const Category = (props) => {
 
     setShow(false);
   };
+
   const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
   const handleCategoryImage = (e) => {
     setCategoryImage(e.target.files[0]);
   }; 
@@ -87,7 +90,7 @@ const Category = (props) => {
         <Row>
           <Col md={12} >
             <div style={{ display: 'flex', justifyContent: 'space-between' }} >
-              <h3>Category</h3>
+              <h3>Categories</h3>
               <Button variant="primary" onClick={handleShow}>
                 Add
               </Button>
@@ -114,7 +117,6 @@ const Category = (props) => {
             placeholder={`Category Name`}
             onChange={(e) => setCategoryName(e.target.value)}
           />
-
           <label>Categories</label>
           <select 
             className="form-control" 
@@ -128,19 +130,15 @@ const Category = (props) => {
               )
             }
           </select>
-
           <label>Image</label>  
-          <input className="form-control" type="file" name={categoryImage} onChange={handleCategoryImage} />  
-          
-          
+          <input className="form-control" type="file" name={categoryImage} onChange={handleCategoryImage} />   
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleSave}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
-
     </Layout>
    )
 
