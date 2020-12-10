@@ -43,7 +43,7 @@ const buildNewCategories = (parentId, categories, category) => {
 };
 
 const categoryReducer = (state = initState, action) => {
-    //console.log(action);
+    console.log(action);
     switch(action.type){
         case categoryConstants.GET_ALL_CATEGORIES_SUCCESS:
             state = {

@@ -18,13 +18,10 @@ const Signin = (props) => {
     // const [error, setError] = useState('');
 
     const auth = useSelector(state=> state.auth);
-
     const dispatch = useDispatch();
 
     const userLogin = (e)=> {
-
         e.preventDefault(); 
-
         const user = {
             email, password
         };
@@ -48,7 +45,6 @@ const Signin = (props) => {
                             type="email"
                             onChange={(e)=> setEmail(e.target.value)}
                         />
-
                         <Input
                             Label="Password"
                             placeholder="password"

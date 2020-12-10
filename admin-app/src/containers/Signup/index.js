@@ -25,14 +25,10 @@ const Signup = (props) => {
     const dispatch = useDispatch();
 
     const userSignup = (e) => {
-
         e.preventDefault();
-
         const user= { firstName, lastName, email, password } ;
-
         dispatch(signup(user));
     };
-
     if(auth.authenticate){
         return <Redirect to={'/'} />
     }
@@ -75,7 +71,6 @@ const Signup = (props) => {
                             type="email"
                             onChange={(e)=> {setEmail(e.target.value)}}
                         />
-
                         <Input
                             Label="Password"
                             placeholder="password"
@@ -92,7 +87,6 @@ const Signup = (props) => {
         </Container>
     </Layout>
    )
-
- }
+}
 
 export default Signup

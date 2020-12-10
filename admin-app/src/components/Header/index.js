@@ -10,7 +10,6 @@ import { signout } from '../../actions/auth.actions';
 **/
 
 const Header = (props) => {
-
     const auth  = useSelector(state => state.auth);
     const dispatch = useDispatch();
 
@@ -42,7 +41,7 @@ const Header = (props) => {
     }; 
   
     return(
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" style={{zIndex: 1}}>
+    <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark" style={{zIndex: 1}}>
         <Container fluid >
             <Link to="/" className="navbar-brand">Admin Dashboard</Link>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -53,7 +52,6 @@ const Header = (props) => {
         </Container>    
     </Navbar>
    )
-
- }
+}
 
 export default Header
