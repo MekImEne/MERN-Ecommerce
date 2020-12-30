@@ -5,7 +5,7 @@ import Home from './containers/Home';
 import Signin from './containers/Signin';
 import Signup from './containers/Signup';
 import PrivateRoute from './components/HOC/PrivateRoute';
-import { isUserLoggedIn , getAllCategory, getInitalData} from './actions'
+import { isUserLoggedIn , getInitalData} from './actions'
 import { useDispatch, useSelector } from 'react-redux';
 import Products from './containers/Products';
 import Orders from './containers/Orders';
@@ -21,7 +21,8 @@ function App() {
     if(!auth.authenticate){
       dispatch(isUserLoggedIn());
     }
-    //dispatch(getAllCategory()); // deplace to App to render categories in the tab of Products too    
+    //dispatch(getAllCategory()); 
+    // deplace to App to render categories in the tab of Products too    
     dispatch(getInitalData());
   }, [] );
 
