@@ -1,10 +1,20 @@
+import React from 'react';
 import './App.css';
-import HomePage from './containers/HomePage';
+import {BrowserRouter as Router , Route, Switch} from 'react-router-dom';
+
+import Home from './containers/Home';
+import Products from './containers/Products';
+
 
 function App() {
   return (
     <div className="App">
-      <HomePage/>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/:slug" component={Products} />
+        </Switch>
+      </Router>
     </div>
   );
 }
